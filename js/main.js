@@ -35,8 +35,8 @@ $(document).ready(function(){
 
     /* toggle logo once it is hovered over */
     $(".logo_fiind").hover(
-        /*function() {$(this).attr("src","/images/logo/logo_inverted.svg");},
-        function() {$(this).attr("src","/images/logo/logo.svg");*/
+        /*function() {$(this).attr("src","../images/logo/logo_inverted.svg");},
+        function() {$(this).attr("src","../images/logo/logo.svg");*/
         function(){
         $(this).addClass('transition');
     }, function(){
@@ -45,8 +45,8 @@ $(document).ready(function(){
 
     /* toggle collapsed menuBar icon once it is hovered over */
     $(".myCollapsedMenuBarIcon").hover(
-        function() {$(this).attr("src","/images/logo/menubar_inverted.svg");},
-        function() {$(this).attr("src","/images/logo/menubar.svg");
+        function() {$(this).attr("src","../images/logo/menubar_inverted.svg");},
+        function() {$(this).attr("src","../images/logo/menubar.svg");
     });
 })
 

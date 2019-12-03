@@ -7,21 +7,23 @@
             margin:0;
         }
     </style>
+
     <body>
         <iframe id="microdraw"></iframe>
     </body>
-<script>
-function deparam() {
-    var search = location.search.substring(1);
-    var result = search?
-                JSON.parse('{"' + search.replace(/[&]/g, '","').replace(/[=]/g, '":"') + '"}',
-                function(key, value) { return key === "" ? value : decodeURIComponent(value); }) :
-                {};
-    return result;
-}
-var param = deparam();
-if(param.source) {
-    document.getElementById("microdraw").setAttribute("src", `http://microdraw.pasteur.fr/data?source=${param.source}`);
-}
-</script>
+
+    <script>
+    function deparam() {
+        var search = location.search.substring(1);
+        var result = search?
+                    JSON.parse('{"' + search.replace(/[&]/g, '","').replace(/[=]/g, '":"') + '"}',
+                    function(key, value) { return key === "" ? value : decodeURIComponent(value); }) :
+                    {};
+        return result;
+    }
+    var param = deparam();
+    if(param.source) {
+        document.getElementById("microdraw").setAttribute("src", `http://microdraw.pasteur.fr/data?source=${param.source}`);
+    }
+    </script>
 </html>

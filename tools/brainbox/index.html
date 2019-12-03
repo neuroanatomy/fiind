@@ -7,24 +7,26 @@
             margin:0;
         }
     </style>
+
     <body>
         <iframe id="brainbox"></iframe>
     </body>
-<script>
-function deparam() {
-    var search = location.search.substring(1);
-    var result = search?
-                JSON.parse('{"' + search.replace(/[&]/g, '","').replace(/[=]/g, '":"') + '"}',
-                function(key, value) { return key === "" ? value : decodeURIComponent(value); }) :
-                {};
-    return result;
-}
-var param = deparam();
-if(param.source) {
-    const url = `http://brainbox.pasteur.fr/mri?fullscreen=true&url=${param.source}`;
-    console.log(url);
-    document.getElementById("brainbox").setAttribute("src", url);
-}
 
-</script>
+    <script>
+    function deparam() {
+        var search = location.search.substring(1);
+        var result = search?
+                    JSON.parse('{"' + search.replace(/[&]/g, '","').replace(/[=]/g, '":"') + '"}',
+                    function(key, value) { return key === "" ? value : decodeURIComponent(value); }) :
+                    {};
+        return result;
+    }
+    var param = deparam();
+    if(param.source) {
+        const url = `http://brainbox.pasteur.fr/mri?fullscreen=true&url=${param.source}`;
+        console.log(url);
+        document.getElementById("brainbox").setAttribute("src", url);
+    }
+
+    </script>
 </html>
