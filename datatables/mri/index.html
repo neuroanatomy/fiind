@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>FIIND Ferret Interactive Integrated Neurodevelopment Atlas</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="stylesheet" type="text/css" href="/datatables/mri/mri.css">
+        <!--<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>-->
+        <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Plaster" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/quasar@1.4.3/dist/quasar.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+        <link href="https://cdn.jsdelivr.net/npm/animate.css@^3.5.2/animate.min.css" rel="stylesheet">
+
+    </head>
+
+
+    <body>
+
+    <!-- navigation bar -->
+        <!-- currently, the fixed top class is added, so it sticks to the top-->
+        <!-- data value of nav bar corresponds to id in each section -->
+        <nav class="navbar navbar-expand-lg fixed-top ">
+
+            <a class="navbar-brand" href="https://neuroanatomy.github.io/" target="_blank">
+                <div class="logo_naat"><p style="padding-left:2.7em;color:white;cursor:pointer;font-size:14px;line-height:2.2;vertical-align: middle;">Neuroanatomie appliquée et théorique</p></div>
+            </a>
+            <button class="navbar-toggler myCollapsedMenuBarIcon" id="myMenuBtn" type="button" data-toggle="collapse" data-target="#myMenu" aria-controls="myMenu" aria-expanded="false" aria-label="Toggle navigation" style="padding:0;border:none;" onclick="this.blur();">
+            </button>
+
+            <div class="collapse navbar-collapse" id="myMenu" style="width:100%;">
+                <a class="navbar-brand" href="/index.html#myheader">
+                    <div class="logo_fiind"></div>
+                </a>
+                <ul class="navbar-nav mr-4" >
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html#home">FIIND</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/datatables/histology/" target="_blank">Histology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" <a id="notebooks" href="/resources/notebooks/" target="_blank">Notebooks</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <!-- Table of the MRI data -->
+        <div class="row mainpageparts" id="datatablemri">
+            <div class="container">
+                <!--<h1>MRI</h1>-->
+                <div id="q-app">
+                    <div class="q-pa-md">
+                        <q-table
+                            title="MRI datasets"
+                            :data="data"
+                            :columns="columns"
+                            row-key="name"
+                            dark
+                            color="amber">
+                            <template v-slot:body="props">
+                                <q-tr :props="props">
+                                    <q-td key="desc" :props="props">
+                                        <a
+                                            :href="props.row.brainbox"
+                                            target="_blank"
+                                            style="color:white;cursor:pointer;"
+                                            >
+                                                <q-img
+                                                    :src="props.row.preview"
+                                                    style="width: 140px"
+                                                >
+                                                </q-img>
+                                            </a>
+                                    </q-td>
+                                    <q-td key="Subject" :props="props">
+                                        {{props.row.subject}}
+                                    </q-td>
+                                    <q-td key="Age" :props="props">
+                                        {{props.row.age}}
+                                    </q-td>
+                                    <q-td key="Modality" :props="props">
+                                        {{props.row.modality}}
+                                    </q-td>
+                                    <!--<q-td key="BrainBox" :props="props">
+                                        <q-img
+                                            :src="props.row.logo"
+                                            style="width: 40px"
+                                            >
+                                        </q-img>
+                                        <a
+                                            :href="props.row.brainbox"
+                                            target="_blank"
+                                            style="color:white;cursor:pointer;"
+                                        >{{props.row.ferret}}
+                                        </a>
+                                    </q-td>-->
+                                </q-tr>
+                            </template>
+                        </q-table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+        </script>
+        <!--<script src='https://cdn.jsdelivr.net/npm/jquery@3.1.1/dist/jquery.min.js'></script>-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/quasar@1.4.3/dist/quasar.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/quasar@1.4.3/dist/icon-set/fontawesome-v5.umd.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src='/js/main.js'></script>
+
+
+        <script>
+            AOS.init();
+        </script>
+
+
+        <script>
+            new Vue({
+                el: '#q-app',
+                data () {
+                    return {
+                    columns: [
+                        {
+                        name: 'desc',
+                        required: true,
+                        label: 'Preview',
+                        align: 'left',
+                        field: row => row.preview,
+                        format: val => `${val}`,
+                        sortable: true
+                        },
+                        { name: 'Subject', align: 'center', label: 'Subject', field: 'subject', sortable: true },
+                        //{ name: 'Preview', label: 'Preview', field: 'preview', sortable: false },
+                        { name: 'Age', align: 'center', label: 'Age', field: 'age', sortable: true },
+                        { name: 'Modality', label: 'Modality', field: 'modality', sortable: true },
+                        //{ name: 'BrainBox', label: 'BrainBox', field: 'brainbox', sortable: true },
+                    ],
+                    data: [
+                        {
+                            preview: '/images/datapreview_mri/F01_Adult.jpg',
+                            subject: 'F01',
+                            age: 'Adult',
+                            modality: 'T2w',
+                            logo: '/images/logo/brainbox_no-font.svg',
+                            ferret: 'F01_Adult',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-01_age-Adult_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F02_P0_87.jpg',
+                            subject: 'F02',
+                            age: 'P0',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-02_age-P0_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F03_Adult_180.jpg',
+                            subject: 'F03',
+                            age: 'Adult',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-03_age-Adult_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F04_Adult_230.jpg',
+                            subject: 'F04',
+                            age: 'Adult',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-04_age-Adult_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F05_Adult_188.jpg',
+                            subject: 'F05',
+                            age: 'Adult',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-05_age-Adult_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F06_P4_100.jpg',
+                            subject: 'F06',
+                            age: 'P04',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-06_age-P4_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F07_P4_126.jpg',
+                            subject: 'F07',
+                            age: 'P04',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-07_age-P4_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F08_P4_103.jpg',
+                            subject: 'F08',
+                            age: 'P04',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-08_age-P4_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F09_P4_90.jpg',
+                            subject: 'F09',
+                            age: 'P04',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-09_age-P4_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F10_P8_122.jpg',
+                            subject: 'F10',
+                            age: 'P08',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-10_age-P8_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F11_P8_106.jpg',
+                            subject: 'F11',
+                            age: 'P08',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-11_age-P8_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F12_P16_150.jpg',
+                            subject: 'F12',
+                            age: 'P16',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-12_age-P16_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F13_P8_103.jpg',
+                            subject: 'F13',
+                            age: 'P08',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-13_age-P8_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F14_P8_107.jpg',
+                            subject: 'F14',
+                            age: 'P08',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-14_age-P8_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F15_P16_138.jpg',
+                            subject: 'F15',
+                            age: 'P16',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-15_age-P16_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F16_P32_201.jpg',
+                            subject: 'F16',
+                            age: 'P32',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-16_age-P32_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F17_P32_180.jpg',
+                            subject: 'F17',
+                            age: 'P32',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-17_age-P32_T2.nii.gzz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F18_P32_180.jpg',
+                            subject: 'F18',
+                            age: 'P32',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-18_age-P32_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F19_P32_210.jpg',
+                            subject: 'F19',
+                            age: 'P32',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-19_age-P32_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F20_P16_177.jpg',
+                            subject: 'F20',
+                            age: 'P16',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-20_age-P16_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F21_P16_173.jpg',
+                            subject: 'F21',
+                            age: 'P16',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-21_age-P16_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F22_Adult_180.jpg',
+                            subject: 'F22',
+                            age: 'Adult',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-22_age-Adult_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F23_P0_111.jpg',
+                            subject: 'F23',
+                            age: 'P0',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-23_age-P0_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F24_P0_91.jpg',
+                            subject: 'F24',
+                            age: 'P0',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-24_age-P0_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F25_P2_90.jpg',
+                            subject: 'F25',
+                            age: 'P02',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-25_age-P2_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F26_P2_90.jpg',
+                            subject: 'F26',
+                            age: 'P02',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-26_age-P2_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F27_P2_91.jpg',
+                            subject: 'F27',
+                            age: 'P02',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-27_age-P2_T2.nii.gz'
+                        },
+                        {
+                            preview: '/images/datapreview_mri/F28_P2_103.jpg',
+                            subject: 'F28',
+                            age: 'P02',
+                            modality: 'T2w',
+                            brainbox: '/tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-28_age-P2_T2.nii.gz'
+                        }
+                    ]
+                    }
+                }
+            })
+        </script>
+
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    </body>
+</html>

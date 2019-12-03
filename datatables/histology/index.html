@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>FIIND Ferret Interactive Integrated Neurodevelopment Atlas</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="stylesheet" type="text/css" href="/datatables/histology/histology.css">
+        <!--<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>-->
+        <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Plaster" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/quasar@1.4.3/dist/quasar.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+        <link href="https://cdn.jsdelivr.net/npm/animate.css@^3.5.2/animate.min.css" rel="stylesheet">
+
+    </head>
+
+
+    <body>
+
+    <!-- navigation bar -->
+        <!-- currently, the fixed top class is added, so it sticks to the top -->
+        <!-- data value of nav bar corresponds to id in each section -->
+        <nav class="navbar navbar-expand-lg fixed-top ">
+
+            <a class="navbar-brand" href="https://neuroanatomy.github.io/" target="_blank">
+                <div class="logo_naat"><p style="padding-left:2.7em;color:white;cursor:pointer;font-size:14px;line-height:2.2;vertical-align: middle;">Neuroanatomie appliquée et théorique</p></div>
+            </a>
+            <button class="navbar-toggler myCollapsedMenuBarIcon" id="myMenuBtn" type="button" data-toggle="collapse" data-target="#myMenu" aria-controls="myMenu" aria-expanded="false" aria-label="Toggle navigation" style="padding:0;border:none;" onclick="this.blur();">
+            </button>
+
+            <div class="collapse navbar-collapse" id="myMenu" style="width:100%;">
+                <a class="navbar-brand" href="/index.html#myheader">
+                    <div class="logo_fiind"></div>
+                </a>
+                <ul class="navbar-nav mr-4" >
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html#home">FIIND</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/datatables/mri/index.html" target="_blank">MRI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" <a id="notebooks" href="/resources/notebooks/" target="_blank">Notebooks</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <!-- Table of the histology data -->
+        <div class="row mainpageparts" id="datatablehisto">
+            <div class="container">
+                <!--<h1>Histology</h1>-->
+                <div id="q-app">
+                    <div class="q-pa-md">
+                        <q-table
+                            title="Histological datasets"
+                            :data="data"
+                            :columns="columns"
+                            row-key="name"
+                            dark
+                            color="amber">
+                            <template v-slot:body="props">
+                                <q-tr :props="props">
+                                    <q-td key="desc" :props="props">
+                                        <q-img
+                                            :src="props.row.preview"
+                                            style="width: 140px"
+                                        >
+                                        </q-img>
+                                    </q-td>
+                                    <q-td key="Subject" :props="props">
+                                        {{props.row.subject}}
+                                    </q-td>
+                                    <q-td key="Age" :props="props">
+                                        {{props.row.age}}
+                                    </q-td>
+                                    <q-td key="Staining" :props="props">
+                                        {{props.row.staining}}
+                                    </q-td>
+                                    <q-td key="MicroDraw" :props="props">
+                                        <a 
+                                            :href="props.row.microdraw"
+                                            target="_blank"
+                                            style="color:white;cursor:pointer;"
+                                        >{{props.row.microdraw}}
+                                        </a>
+                                    </q-td>
+                                </q-tr>
+                            </template>
+                        </q-table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+        </script>
+        <!--<script src='https://cdn.jsdelivr.net/npm/jquery@3.1.1/dist/jquery.min.js'></script>-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/quasar@1.4.3/dist/quasar.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/quasar@1.4.3/dist/icon-set/fontawesome-v5.umd.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src='/js/main.js'></script>
+
+
+        <script>
+            AOS.init();
+        </script>
+
+
+        <script>
+            new Vue({
+                el: '#q-app',
+                data () {
+                    return {
+                    columns: [
+                        {
+                        name: 'desc',
+                        required: true,
+                        label: 'Preview',
+                        align: 'left',
+                        field: row => row.preview,
+                        format: val => `${val}`,
+                        sortable: true
+                        },
+                        { name: 'Subject', align: 'center', label: 'Subject', field: 'subject', sortable: true },
+                        //{ name: 'Preview', label: 'Preview', field: 'preview', sortable: false },
+                        { name: 'Age', align: 'center', label: 'Age', field: 'age', sortable: true },
+                        { name: 'Staining', label: 'Staining', field: 'staining', sortable: true },
+                        { name: 'MicroDraw', label: 'MicroDraw', field: 'microdraw', sortable: true },
+                    ],
+                    data: [
+                        {
+                            preview: '/images/datapreview_histo/micro_p32.png',
+                            subject: 'Ferret P32',
+                            age: 'P32',
+                            staining: 'Nissl',
+                            microdraw: '/tools/microdraw/index.html?source=http://microdraw.pasteur.fr/ferret1/ferret.json'
+                        },
+                        {
+                            preview: '/images/datapreview_histo/micro_P16.png',
+                            subject: 'Ferret P16',
+                            age: 'P16',
+                            staining: 'Nissl',
+                            microdraw: '/tools/microdraw/index.html?source=http://microdraw.pasteur.fr/ferret2/ferret.json'
+                        },
+                        {
+                            preview: '/images/datapreview_histo/micro_P0.png',
+                            subject: 'Ferret P0',
+                            age: 'P0',
+                            staining: 'Nissl',
+                            microdraw: '/tools/microdraw/index.html?source=http://microdraw.pasteur.fr/ferret3/ferret.json'
+                        },
+                        {
+                            preview: '/images/datapreview_histo/micro_P0.png',
+                            subject: 'F107',
+                            age: 'P4',
+                            staining: 'Nissl',
+                            microdraw: '/tools/microdraw/index.html?source=http://microdraw.pasteur.fr/F107_P4/F107_P4.json'
+                        },
+                        {
+                            preview: '/images/datapreview_histo/micro_P16.png',
+                            subject: 'F110',
+                            age: 'P8',
+                            staining: 'Nissl',
+                            microdraw: '/tools/microdraw/index.html?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json'
+                        },
+                        {
+                            preview: '/images/datapreview_histo/micro_P16.png',
+                            subject: 'F115',
+                            age: 'P16',
+                            staining: 'NeuN',
+                            microdraw: '/tools/microdraw/index.html?source=http://microdraw.pasteur.fr/F115_P16/F115_P16.json'
+                        },
+                        {
+                            preview: '/images/datapreview_histo/micro_P16.png',
+                            subject: 'F119',
+                            age: 'P32',
+                            staining: 'Nissl',
+                            microdraw: '/tools/microdraw/index.html?source=http://microdraw.pasteur.fr/F119_P32/F119_P32.json'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_P0.png',
+                        subject: 'F101',
+                        age: 'P0',
+                        staining: 'Nissl',
+                        microdraw: '/tools/microdraw/index.html'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_P0.png',
+                        subject: 'F102',
+                        age: 'P0',
+                        staining: 'Nissl',
+                        microdraw: '/tools/microdraw/index.html'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_P0.png',
+                        subject: 'F103',
+                        age: 'P0',
+                        staining: 'Nissl',
+                        microdraw: '/tools/microdraw/index.html'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_P0.png',
+                        subject: 'F104',
+                        age: 'P0',
+                        staining: 'Nissl',
+                        microdraw: '/tools/microdraw/index.html'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_P16.png',
+                        subject: 'F105',
+                        age: 'P04',
+                        staining: 'Nissl',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_P16.png',
+                        subject: 'F106',
+                        age: 'P04',
+                        staining: 'NeuN',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_P16.png',
+                        subject: 'F107',
+                        age: 'P04',
+                        staining: 'Nissl',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_P16.png',
+                        subject: 'F108',
+                        age: 'P04',
+                        staining: 'NeuN',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_p32.png',
+                        subject: 'F109',
+                        age: 'P08',
+                        staining: 'NeuN',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_p32.png',
+                        subject: 'F110',
+                        age: 'P08',
+                        staining: 'Nissl',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_p32.png',
+                        subject: 'F111',
+                        age: 'P08',
+                        staining: 'Nissl',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_p32.png',
+                        subject: 'F112',
+                        age: 'P08',
+                        staining: 'Nissl',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_p32.png',
+                        subject: 'F113',
+                        age: 'P16',
+                        staining: 'Nissl',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_p32.png',
+                        subject: 'F114',
+                        age: 'P16',
+                        staining: 'Nissl',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_p32.png',
+                        subject: 'F115',
+                        age: 'P16',
+                        staining: 'Nissl',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_p32.png',
+                        subject: 'F116',
+                        age: 'P16',
+                        staining: 'Nissl',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_p32.png',
+                        subject: 'F117',
+                        age: 'P32',
+                        staining: 'Nissl',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_p32.png',
+                        subject: 'F118',
+                        age: 'P32',
+                        staining: 'Nissl',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_p32.png',
+                        subject: 'F119',
+                        age: 'P32',
+                        staining: 'Nissl',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        },
+                        {
+                        preview: '/images/datapreview_histo/micro_p32.png',
+                        subject: 'F120',
+                        age: 'P32',
+                        staining: 'Nissl',
+                        microdraw: 'link/to/the/ferret/in/viewer'
+                        }
+                    ]
+                    }
+                }
+            })
+        </script>
+
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    </body>
+</html>

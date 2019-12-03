@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="cea.svg"
+   xml:space="preserve"
+   height="283.46375"
+   width="283.46375"
+   inkscape:version="1.0beta1 (32d4812, 2019-09-19)"
+   version="1.1"
+   id="svg2">
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6">
+    <clipPath
+       id="clipPath40"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         inkscape:connector-curvature="0"
+         id="path42"
+         d="m 0.059998,295.697 416.696002,0 0,-295.637 -416.696002,0 0,295.637 z" />
+    </clipPath>
+    <clipPath
+       id="clipPath64"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         inkscape:connector-curvature="0"
+         id="path66"
+         d="m 0.059998,295.697 416.696002,0 0,-295.637 -416.696002,0 0,295.637 z" />
+    </clipPath>
+    <clipPath
+       id="clipPath148"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         inkscape:connector-curvature="0"
+         id="path150"
+         d="m 0.059998,295.697 416.696002,0 0,-295.637 -416.696002,0 0,295.637 z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     inkscape:current-layer="g10"
+     inkscape:window-maximized="0"
+     inkscape:window-y="23"
+     inkscape:window-x="0"
+     inkscape:cy="150"
+     inkscape:cx="157.14286"
+     inkscape:zoom="1.4"
+     showgrid="false"
+     id="namedview4"
+     inkscape:window-height="907"
+     inkscape:window-width="1600"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ababab" />
+  <g
+     transform="matrix(1.25,0,0,-1.25,-119.01,369.62125)"
+     inkscape:label="CEA_logo_Haut"
+     inkscape:groupmode="layer"
+     id="g10">
+    <g
+       style="fill:#ffffff;fill-opacity:1"
+       transform="translate(317.729,295.697)"
+       id="g12">
+      <path
+         inkscape:connector-curvature="0"
+         id="path14"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 0,0 -218.238,0 c -0.011,0 -0.021,0 -0.035,0 -2.343,0 -4.248,-1.93 -4.248,-4.316 0,-2.379 1.905,-4.31 4.248,-4.31 0.014,0 0.024,0 0.035,0 l 0,-0.007 218.232,0 0,0.007 0.006,0 c 2.352,0 4.25,1.931 4.25,4.31 C 4.25,-1.93 2.352,0 0,0" />
+    </g>
+    <g
+       style="fill:#ffffff;fill-opacity:1"
+       transform="translate(317.729,77.549)"
+       id="g16">
+      <path
+         inkscape:connector-curvature="0"
+         id="path18"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 0,0 -218.238,0 c -0.011,0 -0.021,0 -0.035,0 -2.343,0 -4.248,-1.928 -4.248,-4.31 0,-2.387 1.905,-4.313 4.248,-4.313 0.014,0 0.024,0 0.035,0 L 0,-8.623 c 2.352,0 4.25,1.926 4.25,4.313 C 4.25,-1.928 2.352,0 0,0" />
+    </g>
+    <g
+       style="fill:#ffffff;fill-opacity:1"
+       transform="translate(208.178,217.896)"
+       id="g20">
+      <path
+         inkscape:connector-curvature="0"
+         id="path22"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 0,0 c 18.131,0 33.066,-13.591 35.213,-31.145 l -70.42,0 C -33.066,-13.591 -18.127,0 0,0 Z m 36.259,-55.811 c -0.79,1.148 -2.167,1.902 -3.594,1.902 -1.512,0 -2.769,-0.721 -3.557,-1.823 l 0.012,0.01 C 22.709,-64.928 12.069,-70.956 0,-70.956 c -18.12,0 -33.053,13.585 -35.207,31.124 l 79.151,0 c 0.141,1.431 0.216,2.882 0.216,4.358 0,1.265 -0.047,2.712 -0.216,4.329 C 41.772,-8.787 22.929,8.685 0,8.685 c -24.39,0 -44.158,-19.772 -44.158,-44.159 0,-8.228 2.255,-15.927 6.174,-22.52 -6.506,-7.903 -16.358,-12.962 -27.399,-12.962 -19.591,0 -35.482,15.885 -35.482,35.482 0,19.591 15.891,35.474 35.482,35.474 7.864,0 15.132,-2.556 21.015,-6.884 l 0.015,0.022 c 0.718,-0.531 1.595,-0.848 2.552,-0.848 2.404,0 4.345,1.943 4.345,4.347 0,1.591 -0.917,2.878 -2.132,3.729 -7.265,5.23 -16.164,8.316 -25.795,8.316 -24.386,0 -44.161,-19.769 -44.161,-44.156 0,-24.399 19.775,-44.16 44.161,-44.162 12.96,0 24.608,5.586 32.683,14.478 8.079,-8.894 19.742,-14.478 32.7,-14.478 12.937,0 24.557,5.566 32.625,14.431 8.096,-8.994 19.801,-14.646 32.84,-14.646 14.99,0 28.234,7.473 36.221,18.895 l 0,-12.354 c 0,-0.006 0,-0.008 0,-0.008 0,-2.408 1.941,-4.343 4.34,-4.343 2.41,0 4.343,1.935 4.343,4.339 l 0,75.725 c -0.007,2.394 -1.949,4.329 -4.343,4.329 -2.393,0 -4.33,-1.935 -4.34,-4.329 0,-0.007 0,-0.011 0,-0.017 0,-0.003 0,-0.005 0,-0.009 l 0,-12.816 C 93.699,0.984 80.455,8.466 65.465,8.466 c -9.623,0 -18.527,-3.09 -25.792,-8.32 -1.27,-0.761 -2.123,-2.135 -2.123,-3.726 0,-2.401 1.94,-4.346 4.345,-4.346 0.951,0 1.824,0.315 2.552,0.839 l 0.007,-0.015 c 5.883,4.321 13.156,6.888 21.011,6.888 19.604,0 35.486,-15.886 35.486,-35.481 0,-19.592 -15.882,-35.48 -35.486,-35.48 -12.109,0 -22.789,6.079 -29.187,15.335 l -0.019,0.029" />
+    </g>
+  </g>
+</svg>

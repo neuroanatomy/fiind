@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="46.732155mm"
+   height="24.532461mm"
+   viewBox="0 0 165.58638 86.926041"
+   id="svg2"
+   version="1.1"
+   inkscape:version="1.0beta1 (32d4812, 2019-09-19)"
+   sodipodi:docname="fiind_withFontAndText_2.svg">
+  <defs
+     id="defs4">
+    <rect
+       x="500.73685"
+       y="656.01093"
+       width="129.74146"
+       height="158.15199"
+       id="rect847" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="61.995791"
+     inkscape:cy="9.4847676"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="907"
+     inkscape:window-x="12"
+     inkscape:window-y="31"
+     inkscape:window-maximized="0"
+     fit-margin-top="2.5"
+     fit-margin-left="5"
+     fit-margin-right="5"
+     fit-margin-bottom="5"
+     inkscape:document-rotation="0"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-483.58589,-668.11274)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.5px;line-height:1.25;font-family:sans-serif;inline-size:160.624;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.962504"
+       x="500.35657"
+       y="689.466"
+       id="text853"><tspan
+         x="500.35657"
+         y="689.466"
+         sodipodi:role="line"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Thin';letter-spacing:0.962504px;fill:#b3ffff;fill-opacity:1;stroke-width:0.962504">Ferret Interactive</tspan><tspan
+           dx="0.96250153"
+           style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Thin';fill:#b3ffff;fill-opacity:1"> </tspan><tspan
+           dx="4.8535156" /></tspan><tspan
+         x="500.35657"
+         y="711.90385"
+         sodipodi:role="line"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Thin';letter-spacing:0.962504px;fill:#b3ffff;fill-opacity:1;stroke-width:0.962504">Integrated Neuro</tspan><tspan
+           dx="0.96250916"
+           style="font-style:normal;font-variant:normal;font-weight:200;font-stretch:normal;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Ultra-Light';fill:#b3ffff;fill-opacity:1;stroke-width:0.962504"> </tspan><tspan
+           dx="4.8535156" /></tspan><tspan
+         x="500.35657"
+         y="734.24225"
+         sodipodi:role="line"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Thin';fill:#b3ffff;fill-opacity:1">Development Atlas</tspan></tspan></text>
+  </g>
+</svg>

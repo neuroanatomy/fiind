@@ -1,0 +1,53 @@
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px !important;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+}
+.material-icons, .material-icons-outlined, .material-icons-round, .material-icons-sharp, .q-icon {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: inherit;
+    font-size: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+span.q-table__bottom-item {
+    padding-right:10em !important;
+    right: 0;
+}
+q-table__bottom-item {
+    margin-right: 16px !important;
+}
+.q-table__bottom {
+    min-height: 48px;
+    /*padding: 4px 14px 4px 16px;*/
+    /*padding: 4px 54px 204px 56px !important;*/
+    padding-right: 0em !important;
+    font-size: 12px !important;
+}
+.q-icon {
+    line-height: 1;
+    width: 1em;
+    height: 1em;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    text-align: center;
+    position: relative;
+    font-display: block;
+}
