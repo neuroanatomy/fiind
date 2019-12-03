@@ -17,7 +17,7 @@ body {
 .logo_fiind {
     width: 2.0em;
     height: 2.0em;
-    background-image: url(/images/logo/fiind_inverted.svg);
+    background-image: url(../images/logo/fiind_inverted.svg);
     background-size: 100%;
     background-repeat: no-repeat;
     transition-property: background-image;
@@ -28,12 +28,12 @@ body {
     -ms-transition: all .3s ease-in-out;
 }
 .logo_fiind:hover {
-    background-image: url(/images/logo/fiind.svg);
+    background-image: url(../images/logo/fiind.svg);
 }
 .logo_naat {
     width: 1.5em;
     height: 1.5em;
-    background-image: url(/images/logo/naat.svg);
+    background-image: url(../images/logo/naat.svg);
     background-size: 100%;
     background-repeat: no-repeat;
     transition-property: background-image;
@@ -44,22 +44,22 @@ body {
     -ms-transition: all .3s ease-in-out;
 }
 .logo_naat:hover {
-    /*background-image: url(/images/logo/naat_inverted.svg);*/
-    background-image: url(/images/logo/naat.svg);
+    /*background-image: url(./images/logo/naat_inverted.svg);*/
+    background-image: url(../images/logo/naat.svg);
 }
 
 /* menu collapsed button*/
 .myCollapsedMenuBarIcon {
     width: 1.5em;
     height: 1.5em;
-    background-image: url(/images/logo/menubar.svg);
+    background-image: url(../images/logo/menubar.svg);
     background-repeat: no-repeat;
     background-size: 100%;
     transition: .3s ease-in-out;
     -webkit-transition: .3s ease-in-out;
 }
 .myCollapsedMenuBarIcon:hover {
-    background-image: url(/images/logo/menubar_inverted.svg);
+    background-image: url(../images/logo/menubar_inverted.svg);
 }
 
 /* menu on small screens */
@@ -138,7 +138,7 @@ button:active,.button:active:focus,.button:visited {
 .header {
     position: relative;
     background-color: black;
-    background-image: url('/images/landing_page/header_bg.jpg');
+    background-image: url('../images/landing_page/header_bg.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
