@@ -53,8 +53,8 @@
 
 
         <!-- Table of the MRI data -->
-        <div class="row mainpageparts" id="datatablemri">
-            <div class="container">
+        <div class="row" id="datatablemri">
+            <div class="container" style="max-width:50rem;">
                 <!--<h1>MRI</h1>-->
                 <div id="q-app">
                     <div class="q-pa-md">
@@ -63,22 +63,25 @@
                             :data="data"
                             :columns="columns"
                             row-key="name"
+                            virtual-scroll
+                            :pagination.sync="pagination"
+                            :rows-per-page-options="[0]"
                             dark
                             color="amber">
                             <template v-slot:body="props">
-                                <q-tr :props="props">
+                                <q-tr :props="props" class="cursor-pointer" @click.native="goTo(props.row.brainbox)">
                                     <q-td key="desc" :props="props">
                                         <a
                                             :href="props.row.brainbox"
                                             target="_blank"
                                             style="color:white;cursor:pointer;"
+                                        >
+                                            <q-img
+                                                :src="props.row.preview"
+                                                style="width: 140px"
                                             >
-                                                <q-img
-                                                    :src="props.row.preview"
-                                                    style="width: 140px"
-                                                >
-                                                </q-img>
-                                            </a>
+                                            </q-img>
+                                        </a>
                                     </q-td>
                                     <q-td key="Subject" :props="props">
                                         {{props.row.subject}}
@@ -89,19 +92,6 @@
                                     <q-td key="Modality" :props="props">
                                         {{props.row.modality}}
                                     </q-td>
-                                    <!--<q-td key="BrainBox" :props="props">
-                                        <q-img
-                                            :src="props.row.logo"
-                                            style="width: 40px"
-                                            >
-                                        </q-img>
-                                        <a
-                                            :href="props.row.brainbox"
-                                            target="_blank"
-                                            style="color:white;cursor:pointer;"
-                                        >{{props.row.ferret}}
-                                        </a>
-                                    </q-td>-->
                                 </q-tr>
                             </template>
                         </q-table>
@@ -136,6 +126,9 @@
                 el: '#q-app',
                 data () {
                     return {
+                    pagination: {
+                        rowsPerPage: 0
+                    },
                     columns: [
                         {
                         name: 'desc',
@@ -353,7 +346,12 @@
                         }
                     ]
                     }
-                }
+                },
+                methods: {
+                    goTo (url) {
+                        window.location = url
+                    },
+                },
             })
         </script>
 
