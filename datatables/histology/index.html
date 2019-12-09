@@ -54,7 +54,7 @@
 
         <!-- Table of the histology data -->
         <div class="row mainpageparts" id="datatablehisto">
-            <div class="container">
+            <div class="container" style="max-width:50rem;">
                 <!--<h1>Histology</h1>-->
                 <div id="q-app">
                     <div class="q-pa-md">
@@ -66,13 +66,19 @@
                             dark
                             color="amber">
                             <template v-slot:body="props">
-                                <q-tr :props="props">
+                                <q-tr :props="props" class="cursor-pointer" @click.native="goTo(props.row.microdraw)">
                                     <q-td key="desc" :props="props">
-                                        <q-img
-                                            :src="props.row.preview"
-                                            style="width: 140px"
+                                        <a
+                                            :href="props.row.microdraw"
+                                            target="_blank"
+                                            style="color:white;cursor:pointer;"
                                         >
-                                        </q-img>
+                                            <q-img
+                                                :src="props.row.preview"
+                                                style="width: 140px"
+                                            >
+                                            </q-img>
+                                        </a>
                                     </q-td>
                                     <q-td key="Subject" :props="props">
                                         {{props.row.subject}}
@@ -83,14 +89,14 @@
                                     <q-td key="Staining" :props="props">
                                         {{props.row.staining}}
                                     </q-td>
-                                    <q-td key="MicroDraw" :props="props">
+                                    <!--<q-td key="MicroDraw" :props="props">
                                         <a 
                                             :href="props.row.microdraw"
                                             target="_blank"
                                             style="color:white;cursor:pointer;"
                                         >{{props.row.microdraw}}
                                         </a>
-                                    </q-td>
+                                    </q-td>-->
                                 </q-tr>
                             </template>
                         </q-table>
@@ -139,7 +145,7 @@
                         //{ name: 'Preview', label: 'Preview', field: 'preview', sortable: false },
                         { name: 'Age', align: 'center', label: 'Age', field: 'age', sortable: true },
                         { name: 'Staining', label: 'Staining', field: 'staining', sortable: true },
-                        { name: 'MicroDraw', label: 'MicroDraw', field: 'microdraw', sortable: true },
+                        //{ name: 'MicroDraw', label: 'MicroDraw', field: 'microdraw', sortable: true },
                     ],
                     data: [
                         {
@@ -164,147 +170,147 @@
                             microdraw: '../../tools/microdraw/index.html?source=http://microdraw.pasteur.fr/ferret3/ferret.json'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P0.png',
+                            preview: '../../images/datapreview_histo/F107_P4_036_Nissl.jpg',
                             subject: 'F107',
                             age: 'P4',
                             staining: 'Nissl',
                             microdraw: '../../tools/microdraw/index.html?source=http://microdraw.pasteur.fr/F107_P4/F107_P4.json'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P16.png',
+                            preview: '../../images/datapreview_histo/F110_P8_041_Nissl.jpg',
                             subject: 'F110',
                             age: 'P8',
                             staining: 'Nissl',
                             microdraw: '../../tools/microdraw/index.html?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P16.png',
+                            preview: '../../images/datapreview_histo/F115_P16_030_Nissl.jpg',
                             subject: 'F115',
                             age: 'P16',
-                            staining: 'NeuN',
+                            staining: 'Nissl',
                             microdraw: '../../tools/microdraw/index.html?source=http://microdraw.pasteur.fr/F115_P16/F115_P16.json'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P16.png',
+                            preview: '../../images/datapreview_histo/F119_P32_056_Nissl.jpg',
                             subject: 'F119',
                             age: 'P32',
                             staining: 'Nissl',
                             microdraw: '../../tools/microdraw/index.html?source=http://microdraw.pasteur.fr/F119_P32/F119_P32.json'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P0.png',
+                            preview: '../../images/datapreview_histo/F101_P0_031_Nissl.jpg',
                             subject: 'F101',
                             age: 'P0',
                             staining: 'Nissl',
                             microdraw: '../../tools/microdraw/index.html'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P0.png',
+                            preview: '../../images/datapreview_histo/F102_P0_031_Nissl.jpg',
                             subject: 'F102',
                             age: 'P0',
                             staining: 'Nissl',
                             microdraw: '../../tools/microdraw/index.html'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P0.png',
+                            preview: '../../images/datapreview_histo/F103_P0_033_Nissl.jpg',
                             subject: 'F103',
                             age: 'P0',
                             staining: 'Nissl',
                             microdraw: '../../tools/microdraw/index.html'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P0.png',
+                            preview: '../../images/datapreview_histo/F104_P0_033_Nissl.jpg',
                             subject: 'F104',
                             age: 'P0',
                             staining: 'Nissl',
                             microdraw: '../../tools/microdraw/index.html'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P16.png',
+                            preview: '../../images/datapreview_histo/F105_P4_031_Nissl.jpg',
                             subject: 'F105',
                             age: 'P04',
                             staining: 'Nissl',
                             microdraw: 'link/to/the/ferret/in/viewer'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P16.png',
+                            preview: '../../images/datapreview_histo/F106_P4_033_Nissl.jpg',
                             subject: 'F106',
                             age: 'P04',
-                            staining: 'NeuN',
+                            staining: 'Nissl',
                             microdraw: 'link/to/the/ferret/in/viewer'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P16.png',
+                            preview: '../../images/datapreview_histo/F107_P4_036_Nissl.jpg',
                             subject: 'F107',
                             age: 'P04',
                             staining: 'Nissl',
                             microdraw: 'link/to/the/ferret/in/viewer'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P16.png',
+                            preview: '../../images/datapreview_histo/F108_P4_027_Nissl.jpg',
                             subject: 'F108',
                             age: 'P04',
-                            staining: 'NeuN',
+                            staining: 'Nissl',
                             microdraw: 'link/to/the/ferret/in/viewer'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P32.png',
+                            preview: '../../images/datapreview_histo/micro_P16.png',
                             subject: 'F109',
                             age: 'P08',
-                            staining: 'NeuN',
+                            staining: 'Nissl',
                             microdraw: 'link/to/the/ferret/in/viewer'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P32.png',
+                            preview: '../../images/datapreview_histo/F110_P8_041_Nissl.jpg',
                             subject: 'F110',
                             age: 'P08',
                             staining: 'Nissl',
                             microdraw: 'link/to/the/ferret/in/viewer'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P32.png',
+                            preview: '../../images/datapreview_histo/F111_P8_045_Nissl.jpg',
                             subject: 'F111',
                             age: 'P08',
                             staining: 'Nissl',
                             microdraw: 'link/to/the/ferret/in/viewer'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P32.png',
+                            preview: '../../images/datapreview_histo/F112_P8_044_Nissl.jpg',
                             subject: 'F112',
                             age: 'P08',
                             staining: 'Nissl',
                             microdraw: 'link/to/the/ferret/in/viewer'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P32.png',
+                            preview: '../../images/datapreview_histo/micro_P16.png',
                             subject: 'F113',
                             age: 'P16',
                             staining: 'Nissl',
                             microdraw: 'link/to/the/ferret/in/viewer'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P32.png',
+                            preview: '../../images/datapreview_histo/F114_P16_029_Nissl.jpg',
                             subject: 'F114',
                             age: 'P16',
                             staining: 'Nissl',
                             microdraw: 'link/to/the/ferret/in/viewer'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P32.png',
+                            preview: '../../images/datapreview_histo/F115_P16_030_Nissl.jpg',
                             subject: 'F115',
                             age: 'P16',
                             staining: 'Nissl',
                             microdraw: 'link/to/the/ferret/in/viewer'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P32.png',
+                            preview: '../../images/datapreview_histo/F116_P16_040_Nissl.jpg',
                             subject: 'F116',
                             age: 'P16',
                             staining: 'Nissl',
                             microdraw: 'link/to/the/ferret/in/viewer'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P32.png',
+                            preview: '../../images/datapreview_histo/F117_P32_047_Nissl.jpg',
                             subject: 'F117',
                             age: 'P32',
                             staining: 'Nissl',
@@ -318,7 +324,7 @@
                             microdraw: 'link/to/the/ferret/in/viewer'
                         },
                         {
-                            preview: '../../images/datapreview_histo/micro_P32.png',
+                            preview: '../../images/datapreview_histo/F119_P32_056_Nissl.jpg',
                             subject: 'F119',
                             age: 'P32',
                             staining: 'Nissl',
@@ -333,7 +339,12 @@
                         }
                     ]
                     }
-                }
+                },
+                methods: {
+                    goTo (url) {
+                        window.location = url
+                    },
+                },
             })
         </script>
 
