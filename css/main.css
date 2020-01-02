@@ -48,7 +48,7 @@ body {
     background-image: url(../images/logo/naat.svg);
 }
 
-/* menu collapsed button*/
+/* menu collapsed button for all pages but landing page */
 .myCollapsedMenuBarIcon {
     width: 1.5em;
     height: 1.5em;
@@ -60,6 +60,13 @@ body {
 }
 .myCollapsedMenuBarIcon:hover {
     background-image: url(../images/logo/menubar_inverted.svg);
+}
+/* menu collapsed button for landing page */
+.landing-page .myCollapsedMenuBarIcon {
+    background-image: url(./images/logo/menubar.svg);
+}
+.landing-page .myCollapsedMenuBarIcon:hover {
+    background-image: url(./images/logo/menubar_inverted.svg);
 }
 
 /* menu on small screens */
