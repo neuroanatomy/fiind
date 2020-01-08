@@ -89,6 +89,12 @@
                                     <q-td key="Staining" :props="props">
                                         {{props.row.staining}}
                                     </q-td>
+                                    <q-td key="Slice thickness" :props="props">
+                                        {{props.row.slicethickness}}
+                                    </q-td>
+                                    <q-td key="Series" :props="props">
+                                        {{props.row.series}}
+                                    </q-td>
                                     <!--<q-td key="MicroDraw" :props="props">
                                         <a 
                                             :href="props.row.microdraw"
@@ -145,6 +151,8 @@
                         //{ name: 'Preview', label: 'Preview', field: 'preview', sortable: false },
                         { name: 'Age', align: 'center', label: 'Age', field: 'age', sortable: true },
                         { name: 'Staining', label: 'Staining', field: 'staining', sortable: true },
+                        { name: 'Slice thickness', label: 'Slice thickness', field: 'slicethickness', sortable: true },
+                        { name: 'Series', label: 'Series', field: 'series', sortable: true },
                         //{ name: 'MicroDraw', label: 'MicroDraw', field: 'microdraw', sortable: true },
                     ],
                     data: [
@@ -153,189 +161,243 @@
                             subject: 'Ferret P32',
                             age: 'P32',
                             staining: 'Nissl',
-                            microdraw: '../../tools/microdraw/index.html?source=http://microdraw.pasteur.fr/ferret1/ferret.json'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/ferret1/ferret.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/micro_P16.png',
                             subject: 'Ferret P16',
                             age: 'P16',
                             staining: 'Nissl',
-                            microdraw: '../../tools/microdraw/index.html?source=http://microdraw.pasteur.fr/ferret2/ferret.json'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/ferret2/ferret.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/micro_P0.png',
                             subject: 'Ferret P0',
                             age: 'P0',
                             staining: 'Nissl',
-                            microdraw: '../../tools/microdraw/index.html?source=http://microdraw.pasteur.fr/ferret3/ferret.json'
+                            slicethickness: '30 µm',
+                            series: '6',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/ferret3/ferret.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F107_P4_036_Nissl.jpg',
                             subject: 'F107',
                             age: 'P4',
                             staining: 'Nissl',
-                            microdraw: '../../tools/microdraw/index.html?source=http://microdraw.pasteur.fr/F107_P4/F107_P4.json'
+                            slicethickness: '30 µm',
+                            series: '6',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F107_P4/F107_P4.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F110_P8_041_Nissl.jpg',
                             subject: 'F110',
                             age: 'P8',
                             staining: 'Nissl',
-                            microdraw: '../../tools/microdraw/index.html?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F110_P8/F110_P8.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F115_P16_030_Nissl.jpg',
                             subject: 'F115',
                             age: 'P16',
                             staining: 'Nissl',
-                            microdraw: '../../tools/microdraw/index.html?source=http://microdraw.pasteur.fr/F115_P16/F115_P16.json'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F115_P16/F115_P16.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F119_P32_056_Nissl.jpg',
                             subject: 'F119',
                             age: 'P32',
                             staining: 'Nissl',
-                            microdraw: '../../tools/microdraw/index.html?source=http://microdraw.pasteur.fr/F119_P32/F119_P32.json'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F119_P32/F119_P32.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F101_P0_031_Nissl.jpg',
                             subject: 'F101',
                             age: 'P0',
                             staining: 'Nissl',
-                            microdraw: '../../tools/microdraw/index.html'
+                            slicethickness: '30 µm',
+                            series: '6',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F101_P0/F101_P0.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F102_P0_031_Nissl.jpg',
                             subject: 'F102',
                             age: 'P0',
                             staining: 'Nissl',
-                            microdraw: '../../tools/microdraw/index.html'
+                            slicethickness: '30 µm',
+                            series: '6',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F102_P0/F102_P0.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F103_P0_033_Nissl.jpg',
                             subject: 'F103',
                             age: 'P0',
                             staining: 'Nissl',
-                            microdraw: '../../tools/microdraw/index.html'
+                            slicethickness: '30 µm',
+                            series: '6',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F103_P0/F103_P0.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F104_P0_033_Nissl.jpg',
                             subject: 'F104',
                             age: 'P0',
                             staining: 'Nissl',
-                            microdraw: '../../tools/microdraw/index.html'
+                            slicethickness: '30 µm',
+                            series: '6',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F104_P0/F104_P0.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F105_P4_031_Nissl.jpg',
                             subject: 'F105',
                             age: 'P04',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '30 µm',
+                            series: '6',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F105_P4/F105_P4.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F106_P4_033_Nissl.jpg',
                             subject: 'F106',
                             age: 'P04',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '30 µm',
+                            series: '6',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F106_P4/F106_P4.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F107_P4_036_Nissl.jpg',
                             subject: 'F107',
                             age: 'P04',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '30 µm',
+                            series: '6',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F107_P4/F107_P4.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F108_P4_027_Nissl.jpg',
                             subject: 'F108',
                             age: 'P04',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '30 µm',
+                            series: '6',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F108_P4/F108_P4.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/micro_P16.png',
                             subject: 'F109',
                             age: 'P08',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F109_P8/F109_P8.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F110_P8_041_Nissl.jpg',
                             subject: 'F110',
                             age: 'P08',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F110_P8/F110_P8.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F111_P8_045_Nissl.jpg',
                             subject: 'F111',
                             age: 'P08',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F111_P8/F111_P8.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F112_P8_044_Nissl.jpg',
                             subject: 'F112',
                             age: 'P08',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F112_P8/F112_P8.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/micro_P16.png',
                             subject: 'F113',
                             age: 'P16',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F113_P16/F113_P16.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F114_P16_029_Nissl.jpg',
                             subject: 'F114',
                             age: 'P16',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F114_P16/F114_P16.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F115_P16_030_Nissl.jpg',
                             subject: 'F115',
                             age: 'P16',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F115_P16/F115_P16.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F116_P16_040_Nissl.jpg',
                             subject: 'F116',
                             age: 'P16',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F116_P16/F116_P16.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F117_P32_047_Nissl.jpg',
                             subject: 'F117',
                             age: 'P32',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F117_P32/F117_P32.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/micro_P32.png',
                             subject: 'F118',
                             age: 'P32',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F118_P32/F118_P32.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/F119_P32_056_Nissl.jpg',
                             subject: 'F119',
                             age: 'P32',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F119_P32/F119_P32.json'
                         },
                         {
                             preview: '../../images/datapreview_histo/micro_P32.png',
                             subject: 'F120',
                             age: 'P32',
                             staining: 'Nissl',
-                            microdraw: 'link/to/the/ferret/in/viewer'
+                            slicethickness: '40 µm',
+                            series: '8',
+                            microdraw: '../../tools/microdraw/index.html?source=https://microdraw.pasteur.fr/F120_P32/F120_P32.json'
                         }
                     ]
                     }
