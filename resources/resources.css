@@ -1,0 +1,23 @@
+.my-card {
+    width: 100%;
+    max-width: 300px;
+}
+.row {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+#q-app {
+    margin-top: 5rem;
+}
+
+a.hover {
+    color: white !important;
+}
+
+.q-btn {
+    color: white !important;
+}
+/* Hreading of the card */
+.text-h6 {
+    font-family: 'Raleway', sans-serif;
+}

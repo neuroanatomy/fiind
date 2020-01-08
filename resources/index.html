@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>FIIND Ferret Interactive Integrated Neurodevelopment Atlas</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../css/main.css">
+        <link rel="stylesheet" type="text/css" href="./resources.css">
+        <!--<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>-->
+        <link rel='shortcut icon' type='image/x-icon' href="../favicon.ico" />
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Plaster" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/quasar@1.4.3/dist/quasar.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+        <link href="https://cdn.jsdelivr.net/npm/animate.css@^3.5.2/animate.min.css" rel="stylesheet">
+
+    </head>
+
+
+    <body>
+
+    <!-- navigation bar -->
+        <!-- currently, the fixed top class is added, so it sticks to the top -->
+        <!-- data value of nav bar corresponds to id in each section -->
+        <nav class="navbar navbar-expand-lg fixed-top ">
+
+            <a class="navbar-brand" href="https://neuroanatomy.github.io/" target="_blank">
+                <div class="logo_naat"><p style="padding-left:2.7em;color:white;cursor:pointer;font-size:14px;line-height:2.2;vertical-align: middle;">Neuroanatomie appliquée et théorique</p></div>
+            </a>
+            <button class="navbar-toggler myCollapsedMenuBarIcon" id="myMenuBtn" type="button" data-toggle="collapse" data-target="#myMenu" aria-controls="myMenu" aria-expanded="false" aria-label="Toggle navigation" style="padding:0;border:none;" onclick="this.blur();">
+            </button>
+
+            <div class="collapse navbar-collapse" id="myMenu" style="width:100%;">
+                <a class="navbar-brand" href="../index.html#myheader">
+                    <div class="logo_fiind"></div>
+                </a>
+                <ul class="navbar-nav mr-4" >
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#home">FIIND</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../datatables/mri/" target="_blank">MRI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../datatables/histology/" target="_blank">Histology</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <!-- Gallery of notebooks to work with the data -->
+        <div id="q-app">
+            <div class="q-pa-md row items-start q-gutter-xl">
+
+                <q-card class="my-card" dark>
+                    <img src="https://generative-placeholders.glitch.me/image?width=300&height=200">
+                    <q-card-section>
+                        <div class="text-h6">Download MRI annotations</div>
+                    </q-card-section>
+            
+                    <q-card-section>
+                        This Python notebook shows how to obtain MRI annotations from
+                        BrainBox. It demonstrates how to obtain and use a connection token,
+                        explains the project structure, and shows how to query and download
+                        MRI segmentation files.
+                    </q-card-section>
+                    <q-card-actions>
+                        <q-btn flat type="a" href="./notebooks/work-with-fiind-data-in-microdraw.html" label="View"></q-btn>
+                        <q-btn flat type="a" href="./notebooks/work-with-fiind-data-in-microdraw.ipynb" label="Download"></q-btn>
+                    </q-card-actions>
+                </q-card>
+
+                <q-card class="my-card" dark>
+                    <img src="https://generative-placeholders.glitch.me/image?width=300&height=200&style=triangles">
+                    <q-card-section>
+                        <div class="text-h6">Download histology annotations</div>
+                    </q-card-section>
+            
+                    <q-card-section>
+                        This Python notebook shows how to obtain vectorial annotations from
+                        MicroDraw. It demonstrates how to obtain and use a connection token,
+                        explains the project structure, and shows how to query and download
+                        vectorial annotations as JSON files, SVG, or even Nifti files.
+                    </q-card-section>
+                    <q-card-actions>
+                        <q-btn flat type="a" href="./notebooks/work-with-fiind-data-in-microdraw.html" label="View"></q-btn>
+                        <q-btn flat type="a" href="./notebooks/work-with-fiind-data-in-microdraw.ipynb" label="Download"></q-btn>
+                    </q-card-actions>
+                </q-card>
+
+            </div>
+        </div>
+
+
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+        </script>
+        <!--<script src='https://cdn.jsdelivr.net/npm/jquery@3.1.1/dist/jquery.min.js'></script>-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/quasar@1.4.3/dist/quasar.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/quasar@1.4.3/dist/icon-set/fontawesome-v5.umd.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="../js/main.js"></script>
+
+
+        <script>
+            AOS.init();
+        </script>
+
+
+        <script>
+            new Vue({
+                el: '#q-app',
+                data () {
+                    return {
+                        lorem: 'Notebook'
+                    }
+                },
+                methods: {
+                    goTo (url) {
+                        window.location = url
+                    },
+                },
+            })
+        </script>
+
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    </body>
+</html>
