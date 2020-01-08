@@ -407,16 +407,6 @@ a.btn.btn-outline-secondary.filter:hover, a.btn.btn-outline-secondary.filter:act
 }
 */
 
-/* Partners */
-.partner-logos {
-    margin-top: 1em;
-    height: 2.7em;
-}
-.partner-names {
-    margin-top: 1em;
-    line-height: 2.7em;
-    vertical-align: middle;
-}
 
 /* data overview – images as overview over available projects */
 .projects {
@@ -535,6 +525,14 @@ img.zoom {
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
     transform: scale(1.2);
+}
+
+
+/* Partners */
+.partner-logos {
+    padding: 2em;
+    width: 10rem;
+    max-height:10rem !important;
 }
 
 
