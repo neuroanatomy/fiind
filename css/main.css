@@ -201,7 +201,7 @@ button:active,.button:active:focus,.button:visited {
     border: none;
 }
 
-/* Main page parts: Home page FIIND, Data, Interaction & Collaboration, Projects, Team, Funding */
+/* Main page parts: Home page FIIND, Data, ((Projects)), Partners, Funding */
 /* visual intro */
 .visualintro {
     width: 100%;
@@ -407,6 +407,17 @@ a.btn.btn-outline-secondary.filter:hover, a.btn.btn-outline-secondary.filter:act
 }
 */
 
+/* Partners */
+.partner-logos {
+    margin-top: 1em;
+    height: 2.7em;
+}
+.partner-names {
+    margin-top: 1em;
+    line-height: 2.7em;
+    vertical-align: middle;
+}
+
 /* data overview – images as overview over available projects */
 .projects {
     margin: 4em 0;
@@ -527,6 +538,10 @@ img.zoom {
 }
 
 
+/* funding */
+#funding {
+    margin-top: 5em;
+}
 /* funding agency logos */
 .funder {
     width: 15rem;
