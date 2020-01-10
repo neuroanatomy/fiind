@@ -92,6 +92,9 @@
                                     <q-td key="Modality" :props="props">
                                         {{props.row.modality}}
                                     </q-td>
+                                    <q-td key="Resolution" :props="props">
+                                        {{props.row.resolution}}
+                                    </q-td>
                                 </q-tr>
                             </template>
                         </q-table>
@@ -143,6 +146,7 @@
                         //{ name: 'Preview', label: 'Preview', field: 'preview', sortable: false },
                         { name: 'Age', align: 'center', label: 'Age', field: 'age', sortable: true },
                         { name: 'Modality', label: 'Modality', field: 'modality', sortable: true },
+                        { name: 'Resolution', label: 'Resolution', field: 'resolution', sortable: true },
                         //{ name: 'BrainBox', label: 'BrainBox', field: 'brainbox', sortable: true },
                     ],
                     data: [
@@ -151,6 +155,7 @@
                             subject: 'F01',
                             age: 'Adult',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             logo: '../../images/logo/brainbox_no-font.svg',
                             ferret: 'F01_Adult',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-01_age-Adult_T2.nii.gz'
@@ -160,6 +165,7 @@
                             subject: 'F02',
                             age: 'P0',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-02_age-P0_T2.nii.gz'
                         },
                         {
@@ -167,6 +173,7 @@
                             subject: 'F03',
                             age: 'Adult',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-03_age-Adult_T2.nii.gz'
                         },
                         {
@@ -174,6 +181,7 @@
                             subject: 'F04',
                             age: 'Adult',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-04_age-Adult_T2.nii.gz'
                         },
                         {
@@ -181,6 +189,7 @@
                             subject: 'F05',
                             age: 'Adult',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-05_age-Adult_T2.nii.gz'
                         },
                         {
@@ -188,6 +197,7 @@
                             subject: 'F06',
                             age: 'P04',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-06_age-P4_T2.nii.gz'
                         },
                         {
@@ -195,6 +205,7 @@
                             subject: 'F07',
                             age: 'P04',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-07_age-P4_T2.nii.gz'
                         },
                         {
@@ -202,6 +213,7 @@
                             subject: 'F08',
                             age: 'P04',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-08_age-P4_T2.nii.gz'
                         },
                         {
@@ -209,6 +221,7 @@
                             subject: 'F09',
                             age: 'P04',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-09_age-P4_T2.nii.gz'
                         },
                         {
@@ -216,6 +229,7 @@
                             subject: 'F10',
                             age: 'P08',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-10_age-P8_T2.nii.gz'
                         },
                         {
@@ -223,6 +237,7 @@
                             subject: 'F11',
                             age: 'P08',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-11_age-P8_T2.nii.gz'
                         },
                         {
@@ -230,6 +245,7 @@
                             subject: 'F12',
                             age: 'P16',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-12_age-P16_T2.nii.gz'
                         },
                         {
@@ -237,6 +253,7 @@
                             subject: 'F13',
                             age: 'P08',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-13_age-P8_T2.nii.gz'
                         },
                         {
@@ -244,6 +261,7 @@
                             subject: 'F14',
                             age: 'P08',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-14_age-P8_T2.nii.gz'
                         },
                         {
@@ -251,6 +269,7 @@
                             subject: 'F15',
                             age: 'P16',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-15_age-P16_T2.nii.gz'
                         },
                         {
@@ -258,6 +277,7 @@
                             subject: 'F16',
                             age: 'P32',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-16_age-P32_T2.nii.gz'
                         },
                         {
@@ -265,6 +285,7 @@
                             subject: 'F17',
                             age: 'P32',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-17_age-P32_T2.nii.gzz'
                         },
                         {
@@ -272,6 +293,7 @@
                             subject: 'F18',
                             age: 'P32',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-18_age-P32_T2.nii.gz'
                         },
                         {
@@ -279,6 +301,7 @@
                             subject: 'F19',
                             age: 'P32',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-19_age-P32_T2.nii.gz'
                         },
                         {
@@ -286,6 +309,7 @@
                             subject: 'F20',
                             age: 'P16',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-20_age-P16_T2.nii.gz'
                         },
                         {
@@ -293,6 +317,7 @@
                             subject: 'F21',
                             age: 'P16',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-21_age-P16_T2.nii.gz'
                         },
                         {
@@ -300,6 +325,7 @@
                             subject: 'F22',
                             age: 'Adult',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-22_age-Adult_T2.nii.gz'
                         },
                         {
@@ -307,6 +333,7 @@
                             subject: 'F23',
                             age: 'P0',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-23_age-P0_T2.nii.gz'
                         },
                         {
@@ -314,6 +341,7 @@
                             subject: 'F24',
                             age: 'P0',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-24_age-P0_T2.nii.gz'
                         },
                         {
@@ -321,6 +349,7 @@
                             subject: 'F25',
                             age: 'P02',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-25_age-P2_T2.nii.gz'
                         },
                         {
@@ -328,6 +357,7 @@
                             subject: 'F26',
                             age: 'P02',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-26_age-P2_T2.nii.gz'
                         },
                         {
@@ -335,6 +365,7 @@
                             subject: 'F27',
                             age: 'P02',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-27_age-P2_T2.nii.gz'
                         },
                         {
@@ -342,6 +373,7 @@
                             subject: 'F28',
                             age: 'P02',
                             modality: 'T2w',
+                            resolution: '120 µm\u00b3',
                             brainbox: '../../tools/brainbox/index.html?source=https://zenodo.org/record/893587/files/sub-28_age-P2_T2.nii.gz'
                         }
                     ]
