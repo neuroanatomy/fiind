@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>work-with-fiind-data-in-microdraw</title>
+<title>download-fiind-annotations-from-brainbox</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,88 +13077,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Working-with-the-FIIND-Data-on-MicroDraw">Working with the FIIND Data on MicroDraw<a class="anchor-link" href="#Working-with-the-FIIND-Data-on-MicroDraw">&#182;</a></h1>
+<h1 id="Downloading-segmentations-from-FIIND-on-BrainBox">Downloading segmentations from <i>FIIND</i> on BrainBox<a class="anchor-link" href="#Downloading-segmentations-from-FIIND-on-BrainBox">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Katja Heuer, Roberto Toro, 2019</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This notebook will show you how to query the MicroDraw API, find the histological data included in the <i>FIIND</i> project and the available annotations, and download your vectorial annotations for each slice to a <code>.json</code> file.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-The-project-on-MicroDraw">1. The project on MicroDraw<a class="anchor-link" href="#1.-The-project-on-MicroDraw">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Project URL:</strong> <a href="http://microdraw.pasteur.fr/project/FIIND">http://microdraw.pasteur.fr/project/FIIND</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Data">Data<a class="anchor-link" href="#Data">&#182;</a></h3><ul>
-<li><strong>Histological slices:</strong> <ul>
-<li>Currently, the <i>FIIND</i> project includes 20 histological datasets across 5 different time points of ferret development: P0, P4, P8, P16, and P32; and 2 different stainings: Nissl and NeuN.  </li>
-</ul>
-</li>
-<li><strong>Volume annotations:</strong><ul>
-<li>a first volume annotation of the cerebrum has been created and is the first layer of segmentation loaded on project display</li>
-</ul>
-</li>
-<li><strong>Text annotations:</strong><ul>
-<li>no text annotation layer has been created and populated, yet</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Adding-more-data-fields">Adding more data fields<a class="anchor-link" href="#Adding-more-data-fields">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If you would like to add more annotations, please go to the <code>project settings</code> (clicking on the <code>cog</code> icon upper right will bring you there <a href="http://microdraw.pasteur.fr/project/FIIND/settings">http://microdraw.pasteur.fr/project/FIIND/settings</a>, and you can add more annotations by clicking on the <code>plus</code> icon, and then select the <code>annotation type</code>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Adding-more-Histological-datasets">Adding more Histological datasets<a class="anchor-link" href="#Adding-more-Histological-datasets">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If you would like to add more histological datasets to the project, you need to first convert the data to deep zoom format, and host it on any server (server, Google-Drive, Dropbox etc.). Detailed information will be added soon. On MicroDraw, you can then click on the <code>plus</code> icon on the very bottom of the page to add more links with their respective species name to the file list.</p>
+<p>This script demonstrates how to obtain programmatically all segmentations available for FIIND MRI data in BrainBox.</p>
+<h2 id="1.-The-project-on-BrainBox">1. The project on BrainBox<a class="anchor-link" href="#1.-The-project-on-BrainBox">&#182;</a></h2><p>The project URL is <a href="https://brainbox.pasteur.fr/project/FIIND">https://brainbox.pasteur.fr/project/FIIND</a>. The project contains 28 MRIs, 4 for each time point including P0 (day of birth), P2, P4, P8, P16, P32 and adult. These MRIs have a brain mask in the annotation layer <code>Atlas</code>. Finally, there are 2 text annotations: <code>MRI Quality</code> and <code>Comments</code>.</p>
 
 </div>
 </div>
@@ -13172,15 +13099,16 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">urllib.request</span> <span class="k">as</span> <span class="nn">urlreq</span>
-<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="k">import</span> <span class="n">urlopen</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="k">import</span> <span class="n">tqdm</span>
 </pre></div>
+
     </div>
 </div>
 </div>
@@ -13189,120 +13117,60 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Define-paths-&amp;-set-project-structure">3. Define paths &amp; set project structure<a class="anchor-link" href="#3.-Define-paths-&amp;-set-project-structure">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.1.-Local:-Where-to-save-data-to?">3.1. Local: Where to save data to?<a class="anchor-link" href="#3.1.-Local:-Where-to-save-data-to?">&#182;</a></h3>
+<h2 id="3.-Configuration">3. Configuration<a class="anchor-link" href="#3.-Configuration">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># where to store the masks you want to download from BrainBox</span>
-<span class="n">RAWSEG_DIR</span> <span class="o">=</span> <span class="s1">&#39;../data/raw/seg/FIIND/&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Project name</span>
+<span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;FIIND&#39;</span>
+
+<span class="c1"># Names of the segmentations to download</span>
+<span class="n">masknames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Atlas&#39;</span><span class="p">]</span>
+
+<span class="c1"># Local directory for saving the segmentations</span>
+<span class="n">RAWSEG_DIR</span> <span class="o">=</span> <span class="s1">&#39;./data-fiind-brainbox/&#39;</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-Get-information">4. Get information<a class="anchor-link" href="#4.-Get-information">&#182;</a></h2>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">RAWSEG_DIR</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create local download directory if it doesn&#39;t exist</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">RAWSEG_DIR</span><span class="p">):</span>
     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">RAWSEG_DIR</span><span class="p">)</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
+<span class="c1"># Project URL</span>
+<span class="n">prj_url</span> <span class="o">=</span> <span class="s2">&quot;https://brainbox.pasteur.fr/project/json/&quot;</span> <span class="o">+</span> <span class="n">project</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.2.-Online:-Where-to-upload-the-data-to?-and-which-segmentations-shall-be-uploaded-or-downloaded?">3.2. Online: Where to upload the data to? and which segmentations shall be uploaded or downloaded?<a class="anchor-link" href="#3.2.-Online:-Where-to-upload-the-data-to?-and-which-segmentations-shall-be-uploaded-or-downloaded?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="3.2.1.-Get-token-for-MicroDraw">3.2.1. Get token for MicroDraw<a class="anchor-link" href="#3.2.1.-Get-token-for-MicroDraw">&#182;</a></h4><p>Get a token for MicroDraw to access the project.</p>
+<span class="c1"># Base MRI URL</span>
+<span class="n">mri_url</span> <span class="o">=</span> <span class="s2">&quot;https://brainbox.pasteur.fr/mri/json?url=&quot;</span>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If the project is a closed project, you need to get a <code>token</code> to download and upload data.<br>
-Log into MicroDraw, and go to <a href="http://microdraw.pasteur.fr/token">http://microdraw.pasteur.fr/token</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># token valid for 24h</span>
-<span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;jl07ntgycuqhtd23qr8ju&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="3.2.2.-Find-API-for-the-FIIND-project-on-MicroDraw">3.2.2. Find API for the FIIND project on MicroDraw<a class="anchor-link" href="#3.2.2.-Find-API-for-the-FIIND-project-on-MicroDraw">&#182;</a></h4><p><strong>You can find all the structure via the MicroDraw API:</strong><br>
-here for the entire project:<br>
-<a href="http://microdraw.pasteur.fr/project/json/FIIND/">http://microdraw.pasteur.fr/project/json/FIIND/</a><br>
-and here for one single MRI dataset:<br>
-<a href="http://microdraw.pasteur.fr/project/FIIND?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=36">http://microdraw.pasteur.fr/project/FIIND?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=36</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.3.-Set-project-structure">3.3. Set project structure<a class="anchor-link" href="#3.3.-Set-project-structure">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Set project structure</span>
-<span class="c1"># prj - The structure containing all the project data</span>
-<span class="c1">#prj_url = &quot;http://microdraw.pasteur.fr/project/json/FIIND/?token=&quot;+token</span>
-<span class="n">prj_url</span> <span class="o">=</span> <span class="s2">&quot;http://microdraw.pasteur.fr/project/json/FIIND/&quot;</span>
-
+<span class="c1"># Download project description</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">urlreq</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span> <span class="n">prj_url</span> <span class="p">)</span>
 <span class="n">txt</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">prj</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span> <span class="n">txt</span> <span class="p">)</span>
+
+<span class="c1"># Get number of files</span>
 <span class="n">nfiles</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span> <span class="n">prj</span><span class="p">[</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;list&#39;</span><span class="p">]</span> <span class="p">)</span>
-
-<span class="n">N</span> <span class="o">=</span> <span class="n">nfiles</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c1">#7</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Segmentations for </span><span class="si">%s</span><span class="s2"> files will be downloaded&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">nfiles</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13319,7 +13187,7 @@ and here for one single MRI dataset:<br>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>7
+<pre>Segmentations for 28 files will be downloaded
 </pre>
 </div>
 </div>
@@ -13328,55 +13196,65 @@ and here for one single MRI dataset:<br>
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># You can check the files if you like with the following line of code</span>
-<span class="c1">#print ( prj[&#39;files&#39;][&#39;list&#39;] )</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.-Downloading-segmentations">4. Downloading segmentations<a class="anchor-link" href="#4.-Downloading-segmentations">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Option-1:-Select-one-specific-slice-of-one-specific-species-for-which-you-would-like-to-download-the-segmentations">Option 1: Select one specific slice of one specific species for which you would like to download the segmentations<a class="anchor-link" href="#Option-1:-Select-one-specific-slice-of-one-specific-species-for-which-you-would-like-to-download-the-segmentations">&#182;</a></h4>
+<h2 id="5.-Download-segmentations">5. Download segmentations<a class="anchor-link" href="#5.-Download-segmentations">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># select your specimen – as you see it in the URL field in your browser</span>
-<span class="n">specimenID</span> <span class="o">=</span> <span class="s2">&quot;F110_P8&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Iterate over all project files</span>
+<span class="k">for</span> <span class="n">isub</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nfiles</span> <span class="p">)):</span>
+    
+    <span class="c1"># Download MRI description</span>
+    <span class="n">brainbox_url</span> <span class="o">=</span> <span class="n">mri_url</span> <span class="o">+</span> <span class="n">prj</span><span class="p">[</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;list&#39;</span><span class="p">][</span><span class="n">isub</span><span class="p">]</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">urlreq</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span> <span class="n">brainbox_url</span> <span class="p">)</span>
+    <span class="n">txt</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">mri</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span> <span class="n">txt</span> <span class="p">)</span>
+    <span class="n">subID</span> <span class="o">=</span> <span class="n">mri</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
 
-<span class="c1"># set the project this dataset is part of</span>
-<span class="n">project</span> <span class="o">=</span> <span class="s2">&quot;FIIND&quot;</span>
+    <span class="c1"># Search for the mask names atlases within the annotations</span>
+    <span class="n">natlases</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mri</span><span class="p">[</span><span class="s1">&#39;mri&#39;</span><span class="p">][</span><span class="s1">&#39;atlas&#39;</span><span class="p">])</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s2">&quot;https://brainbox.pasteur.fr&quot;</span><span class="o">+</span><span class="n">mri</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    
+    <span class="c1"># Iterate over all atlases</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="n">natlases</span> <span class="p">):</span>
+        
+        <span class="c1"># Iterate over all requested annotation layers</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">masknames</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="s1">&#39;name&#39;</span> <span class="ow">in</span> <span class="n">mri</span><span class="p">[</span><span class="s1">&#39;mri&#39;</span><span class="p">][</span><span class="s1">&#39;atlas&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="ow">and</span>
+                <span class="n">mri</span><span class="p">[</span><span class="s1">&#39;mri&#39;</span><span class="p">][</span><span class="s1">&#39;atlas&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">j</span> <span class="ow">and</span>
+                <span class="n">mri</span><span class="p">[</span><span class="s1">&#39;mri&#39;</span><span class="p">][</span><span class="s1">&#39;atlas&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;project&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">project</span>
+            <span class="p">):</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="n">i</span>
+                <span class="n">filename</span> <span class="o">=</span> <span class="n">mri</span><span class="p">[</span><span class="s1">&#39;mri&#39;</span><span class="p">][</span><span class="s1">&#39;atlas&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span>
+                
+                <span class="c1"># Create a BIDS conforming filename</span>
+                <span class="n">myname</span> <span class="o">=</span> <span class="s2">&quot;sub-&quot;</span> <span class="o">+</span> <span class="n">subID</span> <span class="o">+</span> <span class="s2">&quot;_mask-&quot;</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="s2">&quot;.nii.gz&quot;</span>
 
-<span class="c1">#select the slice you would like to download</span>
-<span class="nb">slice</span> <span class="o">=</span> <span class="mi">36</span>
+                <span class="c1"># Create a BIDS conforming subject directory</span>
+                <span class="n">dst</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{dir}</span><span class="s1">/</span><span class="si">{sub}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="nb">dir</span><span class="o">=</span><span class="n">RAWSEG_DIR</span><span class="p">,</span> <span class="n">sub</span><span class="o">=</span><span class="n">subID</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span> <span class="n">dst</span> <span class="p">):</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span> <span class="n">dst</span> <span class="p">)</span>
 
-<span class="c1"># create output folder</span>
-<span class="n">sub_dir</span> <span class="o">=</span> <span class="n">RAWSEG_DIR</span> <span class="o">+</span> <span class="n">specimenID</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">sub_dir</span><span class="p">):</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">sub_dir</span><span class="p">)</span>
-
-<span class="o">!</span><span class="nb">echo</span> !curl -o <span class="o">{</span>sub_dir<span class="o">}</span>/<span class="o">{</span>specimenID<span class="o">}</span>_slice<span class="o">{</span>slice<span class="o">}</span>.json <span class="s2">&quot;http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/&quot;</span><span class="nv">$specimenID</span><span class="s2">&quot;/&quot;</span><span class="nv">$specimenID</span><span class="s2">&quot;.json&amp;project=&quot;</span><span class="nv">$project</span><span class="s2">&quot;&amp;slice=&quot;</span><span class="nv">$slice</span>
-<span class="o">!</span>curl -o <span class="o">{</span>sub_dir<span class="o">}</span>/<span class="o">{</span>specimenID<span class="o">}</span>_slice<span class="o">{</span>slice<span class="o">}</span>.json <span class="s2">&quot;http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/&quot;</span><span class="nv">$specimenID</span><span class="s2">&quot;/&quot;</span><span class="nv">$specimenID</span><span class="s2">&quot;.json&amp;project=&quot;</span><span class="nv">$project</span><span class="s2">&quot;&amp;slice=&quot;</span><span class="nv">$slice</span>
+                <span class="c1"># Download the atlas</span>
+                <span class="n">atlas_url</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="n">filename</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">f</span> <span class="o">=</span> <span class="n">urlreq</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span> <span class="n">atlas_url</span> <span class="p">)</span>
+                    <span class="n">local_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span> <span class="n">dst</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">myname</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span> <span class="p">)</span>
+                    <span class="n">local_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="p">)</span>
+                    <span class="n">local_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="k">continue</span>
+    <span class="k">if</span> <span class="n">index</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No atlas contained the requested masks&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13392,418 +13270,12 @@ and here for one single MRI dataset:<br>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice36.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=36
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  5603  100  5603    0     0   163k      0 --:--:-- --:--:-- --:--:--  165k
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>100%|██████████| 28/28 [00:08&lt;00:00,  3.38it/s]
 </pre>
 </div>
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Option-2:-Download-the-segmentations-of-all-/-a-range-of-slices-of-one-specific-specimen--&#8211;-implementation-using-bash">Option 2: Download the segmentations of all / a range of slices of one specific specimen  &#8211; implementation using bash<a class="anchor-link" href="#Option-2:-Download-the-segmentations-of-all-/-a-range-of-slices-of-one-specific-specimen--&#8211;-implementation-using-bash">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># select your specimen – as you see it in the URL field in your browser</span>
-<span class="n">specimenID</span> <span class="o">=</span> <span class="s2">&quot;F110_P8&quot;</span>
-
-<span class="c1"># define the total number of slices of that specimen – N+1 – visible in MicroDraw interface the very last slice plus 1</span>
-<span class="n">nslices</span> <span class="o">=</span> <span class="mi">72</span>
-
-<span class="c1"># set the project this dataset is part of</span>
-<span class="n">project</span> <span class="o">=</span> <span class="s2">&quot;FIIND&quot;</span>
-
-<span class="c1"># create output folder</span>
-<span class="n">sub_dir</span> <span class="o">=</span> <span class="n">RAWSEG_DIR</span> <span class="o">+</span> <span class="n">specimenID</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">sub_dir</span><span class="p">):</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">sub_dir</span><span class="p">)</span>
-
-<span class="c1"># download segmentations from all slices</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nslices</span><span class="p">):</span>
-    <span class="o">!</span><span class="nb">echo</span> !curl -o <span class="o">{</span>sub_dir<span class="o">}</span>/<span class="o">{</span>specimenID<span class="o">}</span>_slice<span class="o">{</span>i<span class="o">}</span>.json <span class="s2">&quot;http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/&quot;</span><span class="nv">$specimenID</span><span class="s2">&quot;/&quot;</span><span class="nv">$specimenID</span><span class="s2">&quot;.json&amp;project=&quot;</span><span class="nv">$project</span><span class="s2">&quot;&amp;slice=&quot;</span><span class="nv">$i</span>
-    <span class="o">!</span>curl -o <span class="o">{</span>sub_dir<span class="o">}</span>/<span class="o">{</span>specimenID<span class="o">}</span>_slice<span class="o">{</span>i<span class="o">}</span>.json <span class="s2">&quot;http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/&quot;</span><span class="nv">$specimenID</span><span class="s2">&quot;/&quot;</span><span class="nv">$specimenID</span><span class="s2">&quot;.json&amp;project=&quot;</span><span class="nv">$project</span><span class="s2">&quot;&amp;slice=&quot;</span><span class="nv">$i</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice0.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=0
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     70      0 --:--:-- --:--:-- --:--:--    71
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice1.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=1
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     29      0 --:--:-- --:--:-- --:--:--    29
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice2.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=2
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     73      0 --:--:-- --:--:-- --:--:--    74
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice3.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=3
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     31      0 --:--:-- --:--:-- --:--:--    31
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice4.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=4
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     73      0 --:--:-- --:--:-- --:--:--    74
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice5.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=5
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     64      0 --:--:-- --:--:-- --:--:--    66
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice6.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=6
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     91      0 --:--:-- --:--:-- --:--:--    95
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice7.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=7
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     82      0 --:--:-- --:--:-- --:--:--    83
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice8.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=8
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     66      0 --:--:-- --:--:-- --:--:--    66
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice9.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=9
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     83      0 --:--:-- --:--:-- --:--:--    86
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice10.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=10
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     83      0 --:--:-- --:--:-- --:--:--    86
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice11.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=11
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     65      0 --:--:-- --:--:-- --:--:--    66
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice12.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=12
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     74      0 --:--:-- --:--:-- --:--:--    76
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice13.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=13
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     81      0 --:--:-- --:--:-- --:--:--    83
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice14.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=14
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     69      0 --:--:-- --:--:-- --:--:--    71
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice15.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=15
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     85      0 --:--:-- --:--:-- --:--:--    86
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice16.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=16
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     74      0 --:--:-- --:--:-- --:--:--    76
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice17.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=17
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     69      0 --:--:-- --:--:-- --:--:--    71
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice18.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=18
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     71      0 --:--:-- --:--:-- --:--:--    74
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice19.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=19
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     77      0 --:--:-- --:--:-- --:--:--    80
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice20.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=20
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     66      0 --:--:-- --:--:-- --:--:--    66
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice21.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=21
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     81      0 --:--:-- --:--:-- --:--:--    83
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice22.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=22
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     81      0 --:--:-- --:--:-- --:--:--    83
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice23.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=23
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     66      0 --:--:-- --:--:-- --:--:--    64
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice24.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=24
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     63      0 --:--:-- --:--:-- --:--:--    64
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice25.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=25
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     86      0 --:--:-- --:--:-- --:--:--    86
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice26.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=26
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     68      0 --:--:-- --:--:-- --:--:--    68
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice27.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=27
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     85      0 --:--:-- --:--:-- --:--:--    86
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice28.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=28
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     87      0 --:--:-- --:--:-- --:--:--    90
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice29.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=29
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     20      0 --:--:-- --:--:-- --:--:--    20
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice30.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=30
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     88      0 --:--:-- --:--:-- --:--:--    90
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice31.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=31
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     84      0 --:--:-- --:--:-- --:--:--    86
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice32.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=32
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     65      0 --:--:-- --:--:-- --:--:--    66
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice33.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=33
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  9435  100  9435    0     0   304k      0 --:--:-- --:--:-- --:--:--  307k
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice34.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=34
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  8724  100  8724    0     0   246k      0 --:--:-- --:--:-- --:--:--  250k
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice35.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=35
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  6151  100  6151    0     0   187k      0 --:--:-- --:--:-- --:--:--  187k
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice36.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=36
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  5603  100  5603    0     0   181k      0 --:--:-- --:--:-- --:--:--  182k
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice37.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=37
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  6083  100  6083    0     0  93624      0 --:--:-- --:--:-- --:--:-- 95046
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice38.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=38
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  2926  100  2926    0     0   120k      0 --:--:-- --:--:-- --:--:--  124k
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice39.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=39
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  1137  100  1137    0     0  37936      0 --:--:-- --:--:-- --:--:-- 39206
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice40.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=40
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     63      0 --:--:-- --:--:-- --:--:--    64
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice41.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=41
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0      1      0  0:00:02  0:00:01  0:00:01     1
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice42.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=42
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     90      0 --:--:-- --:--:-- --:--:--    95
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice43.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=43
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     92      0 --:--:-- --:--:-- --:--:--    95
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice44.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=44
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     83      0 --:--:-- --:--:-- --:--:--    83
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice45.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=45
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     79      0 --:--:-- --:--:-- --:--:--    83
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice46.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=46
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     79      0 --:--:-- --:--:-- --:--:--    80
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice47.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=47
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     83      0 --:--:-- --:--:-- --:--:--    86
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice48.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=48
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     96      0 --:--:-- --:--:-- --:--:--   100
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice49.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=49
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     98      0 --:--:-- --:--:-- --:--:--   100
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice50.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=50
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     73      0 --:--:-- --:--:-- --:--:--    74
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice51.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=51
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     74      0 --:--:-- --:--:-- --:--:--    76
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice52.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=52
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     66      0 --:--:-- --:--:-- --:--:--    66
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice53.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=53
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     83      0 --:--:-- --:--:-- --:--:--    86
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice54.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=54
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     66      0 --:--:-- --:--:-- --:--:--    66
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice55.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=55
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     73      0 --:--:-- --:--:-- --:--:--    74
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice56.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=56
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     67      0 --:--:-- --:--:-- --:--:--    68
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice57.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=57
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     79      0 --:--:-- --:--:-- --:--:--    80
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice58.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=58
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     73      0 --:--:-- --:--:-- --:--:--    74
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice59.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=59
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     85      0 --:--:-- --:--:-- --:--:--    86
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice60.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=60
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     82      0 --:--:-- --:--:-- --:--:--    83
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice61.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=61
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     79      0 --:--:-- --:--:-- --:--:--    80
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice62.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=62
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     67      0 --:--:-- --:--:-- --:--:--    68
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice63.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=63
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     31      0 --:--:-- --:--:-- --:--:--    31
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice64.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=64
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     71      0 --:--:-- --:--:-- --:--:--    74
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice65.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=65
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     92      0 --:--:-- --:--:-- --:--:--    95
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice66.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=66
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     69      0 --:--:-- --:--:-- --:--:--    71
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice67.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=67
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     76      0 --:--:-- --:--:-- --:--:--    76
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice68.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=68
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     67      0 --:--:-- --:--:-- --:--:--    68
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice69.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=69
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     70      0 --:--:-- --:--:-- --:--:--    71
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice70.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=70
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0     66      0 --:--:-- --:--:-- --:--:--    68
-!curl -o ../data/raw/seg/FIIND/F110_P8/F110_P8_slice71.json http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/F110_P8/F110_P8.json&amp;project=FIIND&amp;slice=71
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100     2  100     2    0     0      7      0 --:--:-- --:--:-- --:--:--     7
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>open .
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Option-2:-Download-the-segmentations-of-all-/-a-range-of-slices-of-one-specific-specimen--&#8211;-implementation-in-python">Option 2: Download the segmentations of all / a range of slices of one specific specimen  &#8211; implementation in python<a class="anchor-link" href="#Option-2:-Download-the-segmentations-of-all-/-a-range-of-slices-of-one-specific-specimen--&#8211;-implementation-in-python">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># select subject dataset, project, and slice range of interest</span>
-<span class="n">sub</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;F110_P8&quot;</span><span class="p">]</span>
-<span class="n">project</span> <span class="o">=</span> <span class="s2">&quot;FIIND&quot;</span>
-<span class="n">slices</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">72</span><span class="p">)</span>
-<span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;jl07ntgycuqhtd23qr8ju&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sub</span><span class="p">:</span>
-    <span class="c1"># create output folder</span>
-    <span class="n">sub_dir</span> <span class="o">=</span> <span class="n">RAWSEG_DIR</span> <span class="o">+</span> <span class="n">s</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">sub_dir</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">sub_dir</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="nb">slice</span> <span class="ow">in</span> <span class="n">slices</span><span class="p">:</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://microdraw.pasteur.fr/api?source=http://microdraw.pasteur.fr/&quot;</span><span class="o">+</span><span class="n">s</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="n">s</span><span class="o">+</span><span class="s2">&quot;.json&amp;project=&quot;</span><span class="o">+</span><span class="n">project</span><span class="o">+</span><span class="s2">&quot;&amp;slice=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">slice</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&amp;token=&quot;</span><span class="o">+</span><span class="n">token</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sub_dir</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="n">s</span><span class="o">+</span><span class="s2">&quot;_slice&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">slice</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.json&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">fp</span><span class="p">)</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
