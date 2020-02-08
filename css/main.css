@@ -536,6 +536,13 @@ img.zoom {
 }
 
 
+/* Collaborators */
+#collaborators {
+    margin-top: 5em;
+    margin-bottom: 6em;
+}
+
+
 /* funding */
 #funding {
     margin-top: 5em;
